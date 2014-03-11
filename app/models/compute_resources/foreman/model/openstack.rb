@@ -126,7 +126,8 @@ module Foreman::Model
 
     def vm_instance_defaults
       super.merge(
-        :key_name  => key_pair.name
+        :key_name  => key_pair.name,
+        :availability_zone => "na.dev"
       )
     end
 
