@@ -127,7 +127,8 @@ module Foreman::Model
     def vm_instance_defaults
       super.merge(
         :key_name  => key_pair.name,
-        :availability_zone => "na.dev"
+        :availability_zone => "na.dev",
+        :block_device_mapping => [ {:device_name => '/dev/vda', 'volume_size' => 20, 'volume_id' => '' } ],
       )
     end
 
